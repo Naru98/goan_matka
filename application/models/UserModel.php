@@ -4,6 +4,13 @@ class UserModel extends CI_Model {
 		parent::__construct();
 	}
 
+    function getData()
+    {
+        $SQL = "SELECT * FROM games INNER JOIN data ON data.id = ( SELECT id FROM data WHERE data.type = games.id ORDER BY date DESC LIMIT 1 ) ORDER BY que ASC";
+        $query = $this->db->query($SQL);
+        return $query->result_array();
+    }
+
     function insert($data,$table)
     {
         if($this->db->insert($table, $data))

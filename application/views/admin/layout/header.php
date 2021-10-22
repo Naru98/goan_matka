@@ -108,6 +108,12 @@
                 <span class="nav-link-text">Home</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('admin/matka')?>">
+                <i class="ni ni-shop text-primary"></i>
+                <span class="nav-link-text">Matka</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
