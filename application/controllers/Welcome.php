@@ -10,6 +10,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
+		$data['website'] = $this->UserModel->getTable('website');
 		$data['result'] = $this->UserModel->getData();
 		$this->load->view('main', $data);
 	}

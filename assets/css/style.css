@@ -454,7 +454,7 @@ a {
 .my-table td {}
 
 .my-table tr td:nth-child(2),
-.my-table tr td:nth-child(4) {
+.my-table tr td:nth-child(3) {
     color: #00f
 }
 

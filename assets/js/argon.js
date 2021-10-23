@@ -2561,7 +2561,7 @@ var OnScreen = (function() {
 //
 
 'use strict';
-
+var quill;
 var QuillEditor = (function() {
 
 	// Variables
@@ -2577,16 +2577,17 @@ var QuillEditor = (function() {
 		var placeholder = $this.data('quill-placeholder');
 
 		// Init editor
-		var quill = new Quill($this.get(0), {
+		quill = new Quill($this.get(0), {
 			modules: {
 				toolbar: [
 					['bold', 'italic'],
-					['link', 'blockquote', 'code', 'image'],
+					['code'],
 					[{
 						'list': 'ordered'
 					}, {
 						'list': 'bullet'
-					}]
+					}],
+					[{ 'align': 'right' }, { 'align': 'center' }, { 'align': 'justify' }]
 				]
 			},
 			placeholder: placeholder,

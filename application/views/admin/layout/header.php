@@ -103,15 +103,15 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="<?php echo base_url('admin')?>">
+              <a class="nav-link" href="<?php echo base_url('admin')?>">
                 <i class="ni ni-shop text-primary"></i>
                 <span class="nav-link-text">Home</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('admin/matka')?>">
-                <i class="ni ni-shop text-primary"></i>
-                <span class="nav-link-text">Matka</span>
+              <a class="nav-link" href="<?php echo base_url('admin/website')?>">
+                <i class="ni ni-world text-primary"></i>
+                <span class="nav-link-text">Website</span>
               </a>
             </li>
           </ul>

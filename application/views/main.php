@@ -54,74 +54,89 @@
                 Milan Rajdhani* *kalyan Matka Tips *fast Matka Result *kalyan Main Rajdhani Matka Chart *Matka Guessing By Goan Matka By App Best Matka Site By Goan Matka
             </h5>
         </div>
-        <!--<div class="cm-patti">
+        <div class="cm-patti">
 		<h3>Today Lucky Number</h3>
-		<div class="row">
-			<div class="aa55">
-				<h4>Golden Ank
-				<p>4-2-5-1</p>
-				</h4>
-			</div>
-			<div class="aa55">
-				<h4>Motor Patti</h4>
-				<p></p>
-			</div>
-		</div>
-	</div>-->
+            <div class="row">
+                <?php
+                if($website)
+                {
+                    foreach ($website as $w) {
+                        if($w['type']==1)
+                        {
+                            ?>
+                            <div class="aa55">
+                                <h4><?php echo $w['header']; ?>
+                                <?php echo $w['content']; ?>
+                                </h4>
+                            </div>
+                            <?php
+                        }
+
+                    }
+                }
+                ?>
+            </div>
+	    </div>
         <?php
             $live=[];
             if($result)
 			{
                 $date = date('Y-m-d');
+                $time = date('H:i');
 				foreach ($result as $r) {
-                    echo date('H:i');
-                    if($r['date'] < $date)
+                    if(strtotime($r['date']) < strtotime($date) && $r['holiday'] == 0)
                     {
+                        $min = (strtotime($r['open_time']) - strtotime($time)) / 60;
+                        if($min <= 10)
+                        {
+                            array_push($live,[
+                                'name'=> $r['name'],
+                                'data'=> 'Loading....'
+                            ]);
+                        }
+                    }else if(strtotime($r['date']) == strtotime($date) && $r['holiday'] == 0)
+                    {
+                        $min = (strtotime($r['open_time']) - strtotime($time)) / 60;
+                        if($min >= -10)
+                        {
+                            array_push($live,[
+                                'name'=> $r['name'],
+                                'data'=> $r['open_patti'].'-'.$r['open_ank']
+                            ]);
+                        }
 
-                    }else if($r['date'] == $date)
-                    {
+                        $min = (strtotime($r['close_time']) - strtotime($time)) / 60;
+                        if($min <= 10 || $min >= -10)
+                        {
+                            array_push($live,[
+                                'name'=> $r['name'],
+                                'data'=> $r['open_patti'].'-'.$r['open_ank'].''.$r['close_ank'].'-'.$r['close_patti']
+                            ]);
+                        }
 
                     }
                 }
             }
         ?>
         <!-- live result -->
+        <?php if($live) { ?>
         <div class="matka-result">
             <h4>☔LIVE RESULT☔</h4>
             <div class="matka-card">
                 Sabse Tezz Live Result Yahi Milega
                 <!-- <div> -->
-                <h6>MILAN NIGHT</h6>
-                <h5>157-3</h5>
-                <a onclick="window.location.reload()">Refresh</a>
-                <!-- </div> -->
-                <!-- <div> -->
-                <h6>RATAN NIGHT</h6>
-                <h5>460-07-377</h5>
-                <a onclick="window.location.reload()">Refresh</a>
-                <!-- </div> -->
-                <!-- <div> -->
-                <h6>BOMBAY RAJSHREE NIGHT</h6>
-                <h5>499-24-158</h5>
-                <a onclick="window.location.reload()">Refresh</a>
-                <!-- </div> -->
-                <!-- <div> -->
-                <h6>MAHARASHTRA NIGHT</h6>
-                <h5>156-2</h5>
-                <a onclick="window.location.reload()">Refresh</a>
-                <!-- </div> -->
-                <!-- <div> -->
-                <h6>MATKA KING NIGHT</h6>
-                <h5>468-83-689</h5>
-                <a onclick="window.location.reload()">Refresh</a>
-                <!-- </div> -->
-                <!-- <div> -->
-                <h6>SUPER MILAN NIGHT</h6>
-                <h5>466-66-150</h5>
-                <a onclick="window.location.reload()">Refresh</a>
-                <!-- </div> -->
+                <?php
+                    foreach ($live as $l) {
+                        ?>
+                            <h6><?php echo $l['name']; ?></h6>
+                            <h5><?php echo $l['data']; ?></h5>
+                            <a onclick="window.location.reload()">Refresh</a>
+                        <?php
+                    }
+                ?>
             </div>
         </div>
+        <?php } ?>
         <!-- slash separated text -->
         <div>
             <!-- class="slash-text" -->
@@ -137,14 +152,31 @@
 				if($result)
 				{
 					foreach ($result as $r) {
-						print_r($r);
 						?>
 							<div>
 								<h4><?php echo $r['name']; ?></h4>
-								<h5>130-45-230</h5>
+								<h5>
+                                <?php 
+                                    if($r['holiday'] == 0)
+                                    {
+                                        if($r['open_ank'])
+                                        {
+                                            echo $r['open_patti'].'-'.$r['open_ank'];
+                                            if($r['close_ank'])
+                                            {
+                                                echo $r['close_ank'].'-'.$r['close_patti'];
+                                            }
+                                        }
+                                    }else
+                                    {
+                                        echo "XXX-XX-XXX";
+                                    }
+                                    $r["name"] = str_replace(" ","_",$r['name']);
+                                ?>
+                                </h5>
 								<h6><?php echo date('h:i a', strtotime($r['open_time'])); ?> &nbsp;&nbsp; <?php echo date('h:i a', strtotime($r['close_time'])); ?></h6>
-								<div class="result_timing"><a href="https://Goan Matka.net/milan-morning-jodi.php" class="btn_chart">Jodi</a></div>
-								<div class="result_timing_right"><a href="https://Goan Matka.net/milan-morning-panel-chart.php" class="btn_chart">Panel</a></div>
+								<div class="result_timing"><a href="<?php echo base_url('/jodi/'.strtolower($r['name']));?>" class="btn_chart">Jodi</a></div>
+								<div class="result_timing_right"><a href="<?php echo base_url('/panel/'.strtolower($r['name']));?>" class="btn_chart">Panel</a></div>
 							</div>
 						<?php
 					}
@@ -182,236 +214,105 @@
         </div>
         <!-- red list -->
         <div class="red-list">
-            <!--  -->
-            <div>
-                <h4>Goan Matka Net Weekly Patti Or Penal Chart From 11-10-2021 To 17-10-2021 For Kalyan, Milan, Kalyan Night, Rajdhani, Time, Main Bazar, Mumbai Royal Night</h4>
-                <p>1=&gt;470 290 119 380</p>
-                <p>2=&gt;589 570 138 480</p>
-                <p>3=&gt;139 238 148 580</p>
-                <p>4=&gt;680 112 239 149</p>
-                <p>5=&gt;357 799 159 690</p>
-                <p>6=&gt;268 790 169 358</p>
-                <p>7=&gt;269 368 458 160</p>
-                <p>8=&gt;350 116 260 170</p>
-                <p>9=&gt;289 379 180 360</p>
-                <p>0=&gt;460 280 370 190</p>
-            </div>
-            <!--  -->
-            <div>
-                <h4>Goan Matka Net Weekly Line Open Or Close From 11-10-2021 To 17-10-2021 For Kalyan, Milan, Kalyan Night, Rajdhani, Time, Main Bazar, Mumbai Royal Night</h4>
-                <p>Mon. 4-9-3-8</p>
-                <p>Tue. 1-6-2-7</p>
-                <p>Wed. 0-5-1-6</p>
-                <p>Thu. 2-7-3-8</p>
-                <p>Fri. 0-5-2-7</p>
-                <p>Sat. 1-6-4-9</p>
-                <p>Sun. 3-8-1-6</p>
-            </div>
-            <!--  -->
-            <div>
-                <h4>Goan Matka Net Weekly Jodi Chart From 11-10-2021 To 17-10-2021 For Kalyan Milan Kalyan Night, Rajdhani Time, Main Bazar, Mumbai Royal Night Market</h4>
-                <p>40 45 41 46</p>
-                <p>92 97 93 98</p>
-                <p>04 09 02 07</p>
-                <p>25 20 21 26</p>
-                <p>38 33 32 37</p>
-                <p>81 86 82 87</p>
-            </div>
-            <!--  -->
+            <?php
+                if($website)
+                {
+                    foreach ($website as $w) {
+                        if($w['type']==2)
+                        {
+                            ?>
+                            <div>
+                                <h4><?php echo $w['header']; ?></h4>
+                                <?php echo $w['content']; ?>
+                            </div>
+                            <?php
+                        }
+
+                    }
+                }
+            ?>
         </div>
 
         <div class="fg-div">
             <h4>FREE GAME ZONE OPEN-CLOSE</h4>
             <div class="fg-main para-1 bdr mb-1 p-1">
                 <div class="fgzoc-time">
-                    <h6>✔DATE:↬ : 16/10/2021 ↫</h6>
+                    <h6>✔DATE:↬ : <?php echo date('d/m/Y')?> ↫</h6>
                     <h5>FREE GUESSING DAILY</h5>
                     <p class="fg-p1">OPEN TO CLOSE FIX ANK</p>
                 </div>
                 <div class="card-1212">
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ MILAN MORNING</p>
-                            <p class="fg-p4">
-                                2-7-0-6 <br />
-                                20-26-70-76-02-047-62-67 <br />
-                                156-129-124-569-123
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ KALYAN MORNING</p>
-                            <p class="fg-p4">
-                                2-7-0-6 <br />
-                                20-26-70-76-02-047-62-67 <br />
-                                156-129-124-569-123
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ TIME BAZAR</p>
-                            <p class="fg-p4">
-                                <br />
-                                <br />
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ MILAN DAY</p>
-                            <p class="fg-p4">
-                                <br />
-                                <br />
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ KALYAN</p>
-                            <p class="fg-p4">
-                                5-4-9-1 <br />
-                                54-49-91-15-59-44-96-10 <br />
-                                357-258-400-149-270-560
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ MILAN NIGHT</p>
-                            <p class="fg-p4">
-                                **-** <br />
-                                **-** <br />
-                                **-**
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ KALYAN NIGHT</p>
-                            <p class="fg-p4">
-                                **-** <br />
-                                **-** <br />
-                                **-**
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ RAJDHANI NIGHT</p>
-                            <p class="fg-p4">
-                                **-** <br />
-                                **-** <br />
-                                **-**
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ MAIN BAZAR</p>
-                            <p class="fg-p4">
-                                **-** <br />
-                                **-** <br />
-                                **-**
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ SRIDEVI</p>
-                            <p class="fg-p4">
-                                *-*-*-* <br />
-                                ***-***-***-*** <br />
-                                **-**-**-**-**-**-**-** <br />
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ SRIDEVI NIGHT</p>
-                            <p class="fg-p4">
-                                2-7-8-9 <br />
-                                147-458-800-333 <br />
-                                28-27-72-78-89-87-99-98 <br />
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fg-c1">
-                        <div>
-                            <p class="fg-p2">↪ OLD MAIN MUMBAI</p>
-                            <p class="fg-p4">
-                                7=9=4 <br />
-                                269=250=149=590=340=234 <br />
-                                71 =76 =41 =46 =91= 96 <br />
-                            </p>
-                        </div>
-                    </div>
+                <?php
+                    if($website)
+                    {
+                        foreach ($website as $w) {
+                            if($w['type']==3)
+                            {
+                                ?>
+                                <div class="fg-c1">
+                                    <div>
+                                        <p class="fg-p2">↪ <?php echo $w['header']; ?></p>
+                                        <p class="fg-p4">
+                                            <?php echo $w['content']; ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+
+                        }
+                    }
+                ?>
                 </div>
             </div>
             <div></div>
-            <div class="B">
-                <span>
-                    <p class="paa3">
-                        कल्याण सिंगल जोड़ी स्कीम दिनांक-12-10-2021<br />
-                        मंगलवार&nbsp; के लिए यह ट्रिक,स्कीम जोड़ी के टोटल और क्लोज़ ओपन&nbsp; होने की दशा पर आधारित है। हमारे द्वारा बहुत प्रयास किया गया है पर आपको छोटे रूप में लाइन दिखा रहे है चलिए आपको दिखाते हैं <br />
-                        &nbsp;&nbsp; सिंगल जोड़ी की लाइन--&gt; <br />
-                        आज से&nbsp; 18 हफ्ते पहले<br />
-                        शुरुआत तारीख -31-05-2021<br />
-                         सो&nbsp;&nbsp;&nbsp; मं&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; बुध&nbsp;&nbsp;&nbsp; गुरु&nbsp;&nbsp; शुक्र&nbsp; शनि<br />
-                        &nbsp; 26&nbsp; ××&nbsp;&nbsp;&nbsp;&nbsp; 51&nbsp;&nbsp;&nbsp; ××&nbsp;&nbsp; ××&nbsp;&nbsp;&nbsp;&nbsp; 66<br />
-                        &nbsp; 83&nbsp; 80&nbsp;&nbsp;&nbsp;&nbsp; 28&nbsp;&nbsp;&nbsp; ××&nbsp;&nbsp; ××&nbsp;&nbsp;&nbsp;&nbsp; 43<br />
-                        &nbsp; 68&nbsp; 50<br />
-                         जब भी&nbsp; सोमवार जोड़ी पहले वीक 26 आता है&nbsp; तो 6 क्लोज़ कट 1 बुधवार को आता&nbsp; है&nbsp; टोटल 6 हुआ तो 6 ओपन शनिवार को&nbsp; &nbsp;<br />
-                        आता है टोटल 66=2 हुआ&nbsp; फिर अगले वीक में भी सोमवार जोड़ी 83 आने पर उसका 3 क्लोज़&nbsp; कट बुधवार को 8 आता है वही क्लोज़ शनिवार को 8 कट 3 से जोड़ी टोटल भी शनिवार जोड़ी<br />
-                        66=2&nbsp; का&nbsp; कट 43=7 बनता है , तो मंगल जोड़ी 50 हुआ<br />
-                        <br />
-                        &nbsp; आगे देखें,,,<br />
-                        लाइन को छोटे रूप में दिखा दिया है&nbsp; &nbsp;<br />
-                        &nbsp;आने के तत्पश्चात<br />
-                        &nbsp;&nbsp;&nbsp; ×× ×× ××<br />
-                        ××××××××××××××<br />
-                        फाइनल सेट&nbsp; अभी<br />
-                        सो&nbsp;&nbsp;&nbsp; मं&nbsp;&nbsp;&nbsp;&nbsp; बुध&nbsp;&nbsp;&nbsp; गुरु&nbsp; शुक्र&nbsp; शनि<br />
-                        80&nbsp;&nbsp; ××&nbsp;&nbsp;&nbsp; 76&nbsp;&nbsp;&nbsp; ××&nbsp;&nbsp; ××&nbsp;&nbsp; 30<br />
-                        42&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp;&nbsp; 21&nbsp;&nbsp;&nbsp; ××&nbsp;&nbsp; ××&nbsp;&nbsp; 52<br />
-                        24&nbsp;&nbsp; ??<br />
-                        👆👆👆<br />
-                        {आज मंगलवार जोड़ी }<br />
-                         क्या आएगा ट्रिक स्कीम का आधार है <br />
-                        हमारे अध्य्यन के कठिन मेहनत से आज कल्याण बाजार में&nbsp; आज&nbsp; सोमवार जोड़ी टोटल&nbsp; 5&nbsp; होना चाहिए और&nbsp; -अंक&nbsp; 1-3-5-4 -ओपन में आना चाहिए खेलो दस हज़ार से ,और जोड़ी -14-32-50-41की फैमिली से आना चाहिए
-                        ओपन पत्ती 146-247-456-789<br />
-                        आना चाहिए ""धन्यवाद""" प्रोफेसर:-&nbsp; डी*पी*बॉस<br />
-                    </p>
-                </span>
-            </div>
+            <?php
+                if($website)
+                {
+                    foreach ($website as $w) {
+                        if($w['type']==4)
+                        {
+                            ?>
+                            <div class="B">
+                                <span>
+                                    <?php echo $w['content']; ?>
+                                </span>
+                            </div>
+                            <?php
+                        }
+
+                    }
+                }
+            ?>
             <!--list-->
             <!-- jodi/panel list -->
             <div class="purpel-header ab1">
                 <h4>SATTA MATKA JODI CHART</h4>
-                <a href="https://Goan Matka.net/time-bazar-Chart.php">Time Chart</a> <a href="https://Goan Matka.net/sridevi_jodi_chart_record.php">Sridevi Chart</a>
-                <a href="https://Goan Matka.net/Kalyan-Morning-Chart.php">Kalyan Morning Chart</a> <a href="https://Goan Matka.net/madhuri-jodi-chart.php">Madhuri Chart</a> <a href="https://Goan Matka.net/kalyan-chart.php">Kalyan Chart</a>
-                <a href="https://Goan Matka.net/sridevi-night-jodi-chart.php">Sridevi Night Chart</a> <a href="https://Goan Matka.net/kalyan-night-chart.php">Kalyan Night Chart</a>
-                <a href="https://Goan Matka.net/old-main-mumbai-jodi.chart.php">Old Main Mumbai Chart</a> <a href="https://Goan Matka.net/main-bazar-jodi-chart.php">Main Bazar Chart</a>
-                <a href="https://Goan Matka.net/milan-morning-jodi.php">Milan Morning Chart</a> <a href="https://Goan Matka.net/milan-day-chart.php">Milan Day Chart</a>
-                <a href="https://Goan Matka.net/milan-night-chart.php">Milan Night Chart</a> <a href="https://Goan Matka.net/madhuri-night-chart.php">Madhuri Night Chart</a>
-                <a href="https://Goan Matka.net/madhur-morning-satta-matka-jodi-chart.php">Madhur Morning Chart</a> <a href="https://Goan Matka.net/madhur-day-satta-matka-jodi-chart.php">Madhur Day Chart</a>
-                <a href="https://Goan Matka.net/madhur-night-satta-matka-jodi-chart.php">Madhur Night Chart</a> <a href="https://Goan Matka.net/rajdhani-night-chart.php"> Rajdhani Night Chart </a>
-                <a href="https://Goan Matka.net/supreme-day-chart.php"> Supreme Day Chart </a> <a href="https://Goan Matka.net/supreme-night-chart.php">Supreme Night Chart </a>
+                <?php
+				if($result)
+				{
+					foreach ($result as $r) {
+                        $r["name"] = str_replace(" ","_",$r['name']);
+                        ?>
+                        <a href="<?php echo base_url('/jodi/'.strtolower($r['name']));?>"><?php echo $r['name']; ?> Chart</a>
+                        <?php
+                    }
+                }
+                ?>
             </div>
             <div class="purpel-header ab1">
                 <h4>MATKA PANEL CHART</h4>
-                <a href="https://Goan Matka.net/time-bazar-penal.php">Time Panel Chart</a> <a href="https://Goan Matka.net/sridevi_penal_chart_record.php">Sridevi Panel Chart</a>
-                <a href="https://Goan Matka.net/Kalyan-Morning-Penal-Chart.php">Kalyan Morning Panel Chart</a> <a href="https://Goan Matka.net/madhuri-panel-chart.php">Madhuri Penal Chart</a>
-                <a href="https://Goan Matka.net/padmavati-panel-chart.php">Padmavati Penal Chart</a> <a href="https://Goan Matka.net/kalyan-penal-chart.php">Kalyan Penal Chart</a>
-                <a href="https://Goan Matka.net/sridevi-night-panel-chart.php">Sridevi Night Penal Chart</a> <a href="https://Goan Matka.net/kalyan-night-penal.php">Kalyan Night Penal Chart</a>
-                <a href="https://Goan Matka.net/old-main-mumbai-panel-chart.php">Old Main Mumbai Panel Chart</a> <a href="https://Goan Matka.net/main-bazar-panel-chart.php">Main Bazar Penal Chart</a>
-                <a href="https://Goan Matka.net/milan-morning-panel-chart.php">Milan Morning Panel Chart</a> <a href="https://Goan Matka.net/milan-day-penal.php"> Milan Day Penal Chart </a>
-                <a href="https://Goan Matka.net/milan-night-penal.php"> Milan Night Penal Chart </a> <a href="https://Goan Matka.net/madhuri-night-panel-chart.php">Madhuri Night Panel Chart </a>
-                <a href="https://Goan Matka.net/rajdhani-night-penal.php"> Rajdhani Night Panel Chart </a> <a href="https://Goan Matka.net/madhur-morning-panel-chart.php">Madhur Morning Day Chart</a>
-                <a href="https://Goan Matka.net/madhur-day-panel-chart.php">Madhur Day Panel Chart </a> <a href="https://Goan Matka.net/madhur-night-panel-chart.php">Madhur Night Panel Chart </a>
-                <a href="https://Goan Matka.net/tara-mumbai-day-panel.php">Tara Mumbai Day Panel Chart </a> <a href="https://Goan Matka.net/tara-mumbai-night-chart-jodi-penal-panel-record.php">Tara Mumbai Night Panel Chart </a>
-                <a href="https://Goan Matka.net/supreme-day-panel-chart.php">Supreme Day Panel Chart </a> <a href="https://Goan Matka.net/supreme-night-panel-chart.php">Supreme Night Panel Chart </a>
+                <?php
+				if($result)
+				{
+					foreach ($result as $r) {
+                        $r["name"] = str_replace(" ","_",$r['name']);
+                        ?>
+                        <a href="<?php echo base_url('/panel/'.strtolower($r['name']));?>"><?php echo $r['name']; ?> Panel Chart</a>
+                        <?php
+                    }
+                }
+                ?>
             </div>
             <div class="faq">
                 <div class="faq-card aabbcc">

@@ -43,34 +43,8 @@
   <script src="<?php echo base_url()?>assets/js/argon.js?v=1.2.0"></script>
   <script>
     const SITE_URL = '<?php echo base_url();?>'
-    $(document).ready( function () {
-      $('.select-input').select2({
-        placeholder: 'Select an option'
-      });
-      
-      $( "#date" ).datepicker();
-      $('.datepicker').datepicker({
-          format: {
-              /*
-              * Say our UI should display a week ahead,
-              * but textbox should store the actual date.
-              * This is useful if we need UI to select local dates,
-              * but store in UTC
-              */
-              toDisplay: function (date, format, language) {
-                  var d = new Date(date);
-                  d.setDate(d.getDate() - 7);
-                  return d.toISOString();
-              },
-              toValue: function (date, format, language) {
-                  var d = new Date(date);
-                  d.setDate(d.getDate() + 7);
-                  return new Date(d);
-              }
-          }
-      });
 
-      $('#companyTable').DataTable({
+      $('#Datatable').DataTable({
         // Processing indicator
         "processing": true,
         // DataTables server-side processing mode
@@ -79,7 +53,7 @@
         "order": [],
         // Load data from an Ajax source
         "ajax": {
-            "url": "<?php echo base_url('api/admin/company'); ?>",
+            "url": "<?php echo base_url('admin/data'); ?>",
             "type": "POST"
         },
         "columnDefs": [
@@ -89,18 +63,10 @@
           },
           {
             "className": "text-right",
-            "targets": [2],
+            "targets": [6],
             "orderable": false
           }
         ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
         'language': {
           'paginate': {
             'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
@@ -108,109 +74,6 @@
           }
         }
       });
-      $('#companyTable').on('click', 'td.clickable', function () {
-        window.location.href=SITE_URL+'admin/company/view/'+$(this).attr('data-id');
-      });
-
-      $('#dtabel').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/coach'); ?>",
-            "type": "POST"
-        },
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          {
-            "className": "text-right",
-            "targets": [3],
-            "orderable": false
-          }
-        ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(2)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-      $('#dtabel').on('click', 'td.clickable', function () {
-        window.location.href=SITE_URL+'company/coach/edit/'+$(this).attr('data-id');
-      });
-
-      $('#athleteDataTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/athlete'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          { 
-            "targets": [3],
-            "orderable": false
-          },
-          { 
-            "className": "text-right",
-            "targets": [4] ,
-            "orderable": false
-          }
-        ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(2)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(3)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-    } );
-
-    $('#athleteDataTable').on('click', 'td.clickable', function () {
-      window.location.href=SITE_URL+'company/athlete/view/'+$(this).attr('data-id')+'/1';
-    });
 
     function deleteModal(user,id)
     {
@@ -221,7 +84,7 @@
     function deleteData(user, id)
     {
       $.ajax({
-          url: SITE_URL+'api/company/delete',
+          url: SITE_URL+'admin/delete',
           type: 'POST',
           data: { id:id, table: user },
           success: function(data){
@@ -233,35 +96,23 @@
       })
     }
 
-    $("#addCoach").validate({
+    $("#addInfo").validate({
       rules: {
-        password: {
-          required: true,
-          minlength: 6,
-          maxlength: 16
-        },
-        cpassword: {
-          equalTo: "#input-password"
-        },
-        image:{
-          extension: "png,jpeg,jpg,svg,gif,webp"
-        },
       },
       messages: {
-        cpassword:{
-          equalTo: 'Please enter the same password again.'
-        }
       },
       submitHandler: function (form){
+        let data = new FormData(form);
+        data.append( 'content', quill.root.innerHTML)
         $('#overlay').show();
         $('#error').text('');
         $('#error').hide();
         $('#success').text('');
         $('#success').hide();
         $.ajax({
-          url: SITE_URL+'api/company/coach/add',
+          url: SITE_URL+'admin/website/save',
           type: 'POST',
-          data: new FormData(form),
+          data: data,
           processData: false,
           contentType: false,
           success: function(data){
@@ -273,7 +124,7 @@
               $('#success').show();
               $("#success").scroll();
               setTimeout(function(){
-                window.location.href= SITE_URL+'company/coach';
+                window.location.href= SITE_URL+'admin/website';
               },2000);
             }else{
               $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
@@ -291,34 +142,23 @@
       }
     })
 
-    $("#editCoach").validate({
+    $("#editInfo").validate({
       rules: {
-        password: {
-          minlength: 6,
-          maxlength: 16
-        },
-        cpassword: {
-          equalTo: "#input-password"
-        },
-        image:{
-          extension: "png,jpeg,jpg,svg,gif,webp"
-        },
       },
       messages: {
-        cpassword:{
-          equalTo: 'Please enter the same password again.'
-        }
       },
       submitHandler: function (form){
+        let data = new FormData(form);
+        data.append( 'content', quill.root.innerHTML)
         $('#overlay').show();
         $('#error').text('');
         $('#error').hide();
         $('#success').text('');
         $('#success').hide();
         $.ajax({
-          url: SITE_URL+'api/company/coach/edit',
+          url: SITE_URL+'admin/website/update',
           type: 'POST',
-          data: new FormData(form),
+          data: data,
           processData: false,
           contentType: false,
           success: function(data){
@@ -348,34 +188,22 @@
       }
     })
 
-    $("#addCompany").validate({
+    $("#addMatka").validate({
       rules: {
-        password: {
-          minlength: 6,
-          maxlength: 16
-        },
-        cpassword: {
-          equalTo: "#input-password"
-        },
-        image:{
-          extension: "png,jpeg,jpg,svg,gif,webp"
-        },
       },
       messages: {
-        cpassword:{
-          equalTo: 'Please enter the same password again.'
-        }
       },
       submitHandler: function (form){
+        let data = new FormData(form);
         $('#overlay').show();
         $('#error').text('');
         $('#error').hide();
         $('#success').text('');
         $('#success').hide();
         $.ajax({
-          url: SITE_URL+'api/admin/addCompany',
+          url: SITE_URL+'admin/matka/save',
           type: 'POST',
-          data: new FormData(form),
+          data: data,
           processData: false,
           contentType: false,
           success: function(data){
@@ -387,179 +215,7 @@
               $('#success').show();
               $("#success").scroll();
               setTimeout(function(){
-                window.location.href=SITE_URL+'admin/company';
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    })
-
-    $("#editCompany").validate({
-      rules: {
-        password: {
-          minlength: 6,
-          maxlength: 16
-        },
-        cpassword: {
-          equalTo: "#input-password"
-        },
-        image:{
-          extension: "png,jpeg,jpg,svg,gif,webp"
-        },
-      },
-      messages: {
-        cpassword:{
-          equalTo: 'Please enter the same password again.'
-        }
-      },
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/admin/editCompany',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.reload();
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    })
-
-    $("#profile").validate({
-      rules: {
-        password: {
-          minlength: 6,
-          maxlength: 16
-        },
-        cpassword: {
-          equalTo: "#input-password"
-        },
-        image:{
-          extension: "png,jpeg,jpg,svg,gif,webp"
-        },
-      },
-      messages: {
-        cpassword:{
-          equalTo: 'Please enter the same password again.'
-        }
-      },
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/admin/editProfile',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.reload();
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    })
-
-    $("#addAthlete").validate({
-      rules: {
-        password: {
-          required: true,
-          minlength: 6,
-          maxlength: 16
-        },
-        cpassword: {
-          equalTo: "#input-password"
-        },
-        image:{
-          extension: "png,jpeg,jpg,svg,gif,webp"
-        },
-      },
-      messages: {
-        cpassword:{
-          equalTo: 'Please enter the same password again.'
-        }
-      },
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/athlete/add',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.href= SITE_URL+'company/athlete';
+                window.location.href= SITE_URL+'admin';
               },2000);
             }else{
               $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
@@ -577,34 +233,22 @@
       }
     })
 
-    $("#editAthlete").validate({
+    $("#editMatka").validate({
       rules: {
-        password: {
-          minlength: 6,
-          maxlength: 16
-        },
-        cpassword: {
-          equalTo: "#input-password"
-        },
-        image:{
-          extension: "png,jpeg,jpg,svg,gif,webp"
-        },
       },
       messages: {
-        cpassword:{
-          equalTo: 'Please enter the same password again.'
-        }
       },
       submitHandler: function (form){
+        let data = new FormData(form);
         $('#overlay').show();
         $('#error').text('');
         $('#error').hide();
         $('#success').text('');
         $('#success').hide();
         $.ajax({
-          url: SITE_URL+'api/company/athlete/edit',
+          url: SITE_URL+'admin/matka/update',
           type: 'POST',
-          data: new FormData(form),
+          data: data,
           processData: false,
           contentType: false,
           success: function(data){
@@ -617,7 +261,7 @@
               $("#success").scroll();
               setTimeout(function(){
                 window.location.reload();
-              },2000);
+              },3000);
             }else{
               $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
               $('#error').show();
@@ -633,756 +277,6 @@
         })
       }
     })
-
-
-    $("#checkinSetting").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/checkinSetting',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.reload()
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-
-    $('#formsDataTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/getForms'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          {
-            "className": "text-right",
-            "targets": [2],
-            "orderable": false
-          }
-        ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-
-      $('#formsDataTable').on('click', 'td.clickable', function () {
-        window.location.href=SITE_URL+'company/forms/edit/'+$(this).attr('data-id');
-      });
-
-
-      $("#addForm").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/addForm',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.href= SITE_URL+'company/forms';
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-
-    $("#editForm").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/editForm',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.reload();
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-
-    $('#athleteshowsDataTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/getAthleteShows'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          {
-            "className": "text-right",
-            "targets": [3],
-            "orderable": false
-          }
-        ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(2)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-
-      $('#athleteshowsDataTable').on('click', 'td.clickable', function () {
-        window.location.href=SITE_URL+'company/shows/edit/'+$(this).attr('data-id');
-      });
-
-    $("#addShow").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/addShow',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.href= SITE_URL+'company/shows';
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-
-    $("#editShow").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/editShow',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.reload();
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-    $('#workoutDataTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/getWorkout'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          {
-            "className": "text-right",
-            "targets": [3],
-            "orderable": false
-          }
-        ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(2)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-
-      $('#workoutDataTable').on('click', 'td.clickable', function () {
-        window.location.href=SITE_URL+'company/workout/edit/'+$(this).attr('data-id');
-      });
-
-      $('#dietDataTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/getDiet'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          {
-            "className": "text-right",
-            "targets": [3],
-            "orderable": false
-          }
-        ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(2)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-
-      $('#dietDataTable').on('click', 'td.clickable', function () {
-        window.location.href=SITE_URL+'company/diet/edit/'+$(this).attr('data-id');
-      });
-
-      $("#addWorkout").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/addWorkout',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.href= res.data.url;
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-
-    $("#editWorkout").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/editWorkout',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.reload()
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-
-    $("#addDiet").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/addDiet',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.href= res.data.url;
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-
-    $("#editDiet").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/company/editDiet',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.reload()
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
-
-    $('#checkinADataTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/checkinA'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          { 
-            "className": "text-right",
-            "targets": [2],
-            "orderable": false
-          }
-        ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-      $('#checkinADataTable').on('click', 'td.clickable', function () {
-        window.location.href=SITE_URL+'company/checkin/view/'+$(this).attr('data-id');
-      });
-
-      $('#FormADataTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/formsA'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          { 
-            "className": "text-right",
-            "targets": [2],
-            "orderable": false
-          }
-        ],
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-
-      $('#showsDataTable').DataTable({
-        // Processing indicator
-        "processing": true,
-        // DataTables server-side processing mode
-        "serverSide": true,
-        // Initial no order.
-        "order": [],
-        // Load data from an Ajax source
-        "ajax": {
-            "url": "<?php echo base_url('api/company/showsA'); ?>",
-            "type": "POST"
-        },
-        //Set column definition initialisation properties
-        "columnDefs": [
-          { 
-            "targets": [0],
-            "orderable": false
-          },
-          { 
-            "className": "text-right",
-            "targets": [3],
-            "orderable": false
-          }
-        ],
-        "createdRow": function( row, data, dataIndex ) {
-          $( row ).find('td:eq(0)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(1)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-          $( row ).find('td:eq(2)')
-            .attr('data-id', data.id)
-            .addClass('clickable');
-        },
-        'language': {
-          'paginate': {
-            'next': '<i class="fa fa-arrow-right" aria-hidden="true"></i>',
-            'previous': '<i class="fa fa-arrow-left" aria-hidden="true"></i>'  
-          }
-        }
-      });
-      $('#showsDataTable').on('click', 'td.clickable', function () {
-        window.location.href=SITE_URL+'company/show/view/'+$(this).attr('data-id');
-      });
-
-      $("#login").validate({
-        rules: {
-          password: {
-            required: true,
-            minlength: 6,
-            maxlength: 16
-          }
-        },
-          submitHandler: function (form){
-          $('#overlay').show();
-          $('#error').text('');
-          $('#error').hide();
-          $('#success').text('');
-          $('#success').hide();
-          $.ajax({
-            url: SITE_URL+'admin/login/check',
-            data: $(form).serializeArray(),
-            type: 'POST',
-            success: function(data){
-              $('#overlay').hide();
-              const res = JSON.parse(data)
-              if(res.status==1)
-              {
-                $('#success').text(res.msg);
-                $('#success').show();
-                $("#success").scroll();
-                window.location.href= res.data.url;
-              }else{
-                $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-                $('#error').show();
-                $("#error").scroll();
-              }
-            },
-            error:function (e){
-              $('#overlay').hide();
-              $('#error').text('Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          })
-          }
-      });
-
-      $("#adminSettings").validate({
-      submitHandler: function (form){
-        $('#overlay').show();
-        $('#error').text('');
-        $('#error').hide();
-        $('#success').text('');
-        $('#success').hide();
-        $.ajax({
-          url: SITE_URL+'api/admin/settings',
-          type: 'POST',
-          data: new FormData(form),
-          processData: false,
-          contentType: false,
-          success: function(data){
-            $('#overlay').hide();
-            const res = JSON.parse(data)
-            if(res.status==1)
-            {
-              $('#success').text(res.msg);
-              $('#success').show();
-              $("#success").scroll();
-              setTimeout(function(){
-                window.location.reload();
-              },3000);
-            }else{
-              $('#error').text(res.msg? res.msg : 'Error occurred! Please try again later.');
-              $('#error').show();
-              $("#error").scroll();
-            }
-          },
-          error:function (e){
-            $('#overlay').hide();
-            $('#error').text('Error occurred! Please try again later.');
-            $('#error').show();
-            $("#error").scroll();
-          }
-        })
-      }
-    });
 
   </script>
 </body>
