@@ -24,7 +24,7 @@ date_default_timezone_set('Asia/Calcutta');
 |
 */
 //$config['base_url'] = 'http://localhost/goan_matka/';
-$config['base_url'] = 'http://bigbosss.in/';
+$config['base_url'] = 'https://bigbosss.in/';
 
 /*
 |--------------------------------------------------------------------------
