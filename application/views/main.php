@@ -13,13 +13,13 @@
             content="BigBosss, Satta matka, kalyan, matka result, kalyan matka, kalyan, matka.com, sattamatka.com, matka tips, today satta number, matka chart, indian matka, satta chart, madhur matka, BigBosss, aaj ka satta"
         />
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TJDKC92Y"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QC8ZTWXFPQ"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-28TJDKC92Y');
+        gtag('config', 'G-QC8ZTWXFPQ');
         </script>
         <link rel="canonical" href="https://bigbosss.in/" />
         <meta http-equiv="refresh" content="900" />
