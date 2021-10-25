@@ -12,6 +12,15 @@
             name="Keywords"
             content="BigBosss, Satta matka, kalyan, matka result, kalyan matka, kalyan, matka.com, sattamatka.com, matka tips, today satta number, matka chart, indian matka, satta chart, madhur matka, BigBosss, aaj ka satta"
         />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-28TJDKC92Y"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-28TJDKC92Y');
+        </script>
         <link rel="canonical" href="https://bigbosss.in/" />
         <meta http-equiv="refresh" content="900" />
         <meta name="google" content="notranslate" />
@@ -32,7 +41,7 @@
 
     <body>
         <div class="logo">
-            <!--<img src="" alt="Image of BigBosss.NET" width="220" height="88">-->
+            <!--<img src="" alt="Image of BigBosss.in" width="220" height="88">-->
             <h1>BigBosss</h1>
         </div>
         <div style="display: flex; padding: 5px; align-items: center; border: 2px solid #eb008b; border-radius: 10px 0 10px 10px; justify-content: space-between; margin-bottom: 2px;">
@@ -380,10 +389,10 @@
             <div class="let-rock">
                 <div class="t-rock t-0">Let’s rock while playing Satta Matka with BigBosss.</div>
                 <p>
-                    Do you know Satta Matka guessing legal or illegal in your country? At BigBosss.net, we are enthusiastically discussing with Kalyan Matka how to get started with Online Matka and get results quickly. It is the smartest
+                    Do you know Satta Matka guessing legal or illegal in your country? At BigBosss.in, we are enthusiastically discussing with Kalyan Matka how to get started with Online Matka and get results quickly. It is the smartest
                     Matka gambling in India and other parts of the world. Satta Matka is the most logically used word in the Matka industry, and Hindi is written as सट्टा मटका.
                 </p>
-                <i>Always use the most authentic Online Matka website like BigBosss.net to try your luck!</i>
+                <i>Always use the most authentic Online Matka website like BigBosss.in to try your luck!</i>
                 <p>
                     We are leading the online Matka industry with our top-notch results you can trust. We are one stop website for Matka Online, Matka Chart, Market, Panel Chart, Fix Matka Jodi, Boss Matka, Indian Matka, Kalyan Result,
                     Kalyan Matka, Matka Result, and more
@@ -401,14 +410,14 @@
                 </p>
                 <div class="t-rock">BigBosss Kalyan Matka Result</div>
                 <p>
-                    If you want to play Kalyan Matka online and make a fortune, you're on the right site. BigBosss.net is Matka's best and most popular web page. We aim to offer every customer a simple gaming experience. With BigBosss,
-                    you won't lose a promoted player. BigBosss has a very intuitive website that you can easily access. Either you are a beginner and don't want to learn how to play? OK, don't worry. Here at BigBosss.net Matka Online,
+                    If you want to play Kalyan Matka online and make a fortune, you're on the right site. BigBosss.in is Matka's best and most popular web page. We aim to offer every customer a simple gaming experience. With BigBosss,
+                    you won't lose a promoted player. BigBosss has a very intuitive website that you can easily access. Either you are a beginner and don't want to learn how to play? OK, don't worry. Here at BigBosss.in Matka Online,
                     you will find the best information on investing and what to invest in. Through a carefully selected group of experts, we offer the best Matka experience and recommend it to everyone, from beginners to adults who have
                     already played Satta. Our experts ensure that you get the correct details about this. Not only that, there is the latest Satta Matka chart showing live results from all markets of this Business. We are on your side from
                     start to end.
                     <br />
                     <br />
-                    Online Matka Play is a very popular game among satta players. BigBosss.net is best Online Game Website to play Matka, BigBosss, Satta, Online Matka, Kalyan Matka, सट्टा मटका etc.
+                    Online Matka Play is a very popular game among satta players. BigBosss.in is best Online Game Website to play Matka, BigBosss, Satta, Online Matka, Kalyan Matka, सट्टा मटका etc.
                 </p>
                 <div class="t-rock">Why are people crazy about Online Matka?</div>
                 <p>
@@ -422,7 +431,7 @@
                     <br />
                     <br />
                     That's precisely why; the content on our website is carefully crafted, and everything you see on our website will help you explore this game. Not only can you host a forum where you can play what you like with the
-                    experts, but you can take advantage of BigBosss.net, too, the best gaming forum with unique features with excellent and fast results. Our constant effort to publish results faster than any other website gives us an
+                    experts, but you can take advantage of BigBosss.in, too, the best gaming forum with unique features with excellent and fast results. Our constant effort to publish results faster than any other website gives us an
                     edge. We will help you make new changes to make quick decisions about the value of your bets and start making faster and better income. If you want to understand Satta Matka very quickly and want to know more, read our
                     tips and tricks.
                 </p>
