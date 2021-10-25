@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<!-- saved from url=(0019)https://Goan Matka.net/ -->
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Goan Matka | SATTA MATKA | KALYAN MATKA | MATKA RESULT | MATKA | SATTA</title>
+        <title>BigBosss | SATTA MATKA | KALYAN MATKA | MATKA RESULT | MATKA | SATTA</title>
         <meta
             name="Description"
-            content="Goan Matka - SATTA MATKA | KALYAN | KALYAN MATKA NUMBER | MATKA RESULT | WWW.MATKA.COM | SATTAMATKA.COM |KALYAN MAIN MATKA TIPS | TODAY MATKA LUCKY NUMBER | SATTA NUMBER | SATTAMATKA CHART | KALYAN FAST RESULT | ONLINE MATKA SATTA RESULTS | Goan Matka | INDIAN MATKA | SATTA KALYAN | MADHUR MATKA | Goan Matka ONLINE - Goan Matka SATTA PLAY Goan Matka GURU"
+            content="BigBosss - SATTA MATKA | KALYAN | KALYAN MATKA NUMBER | MATKA RESULT | WWW.MATKA.COM | SATTAMATKA.COM |KALYAN MAIN MATKA TIPS | TODAY MATKA LUCKY NUMBER | SATTA NUMBER | SATTAMATKA CHART | KALYAN FAST RESULT | ONLINE MATKA SATTA RESULTS | BigBosss | INDIAN MATKA | SATTA KALYAN | MADHUR MATKA | BigBosss ONLINE - BigBosss SATTA PLAY BigBosss GURU"
         />
         <meta
             name="Keywords"
-            content="Goan Matka, Satta matka, kalyan, matka result, kalyan matka, kalyan, matka.com, sattamatka.com, matka tips, today satta number, matka chart, indian matka, satta chart, madhur matka, Goan Matka, aaj ka satta"
+            content="BigBosss, Satta matka, kalyan, matka result, kalyan matka, kalyan, matka.com, sattamatka.com, matka tips, today satta number, matka chart, indian matka, satta chart, madhur matka, BigBosss, aaj ka satta"
         />
-        <link rel="canonical" href="https://Goan Matka.net/" />
+        <link rel="canonical" href="https://bigbosss.in/" />
         <meta http-equiv="refresh" content="900" />
         <meta name="google" content="notranslate" />
         <meta http-equiv="pragma" content="no-cache" />
@@ -21,37 +20,37 @@
         <meta content="yes" name="apple-mobile-web-app-capable" />
         <meta content="yes" name="apple-touch-fullscreen" />
         <meta name="Robots" content="index, follow" />
-        <meta name="author" content="Goan Matka" />
-        <meta name="copyright" content="Goan Matka net satta matka" />
+        <meta name="author" content="BigBosss" />
+        <meta name="copyright" content="BigBosss net satta matka" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Satta Matka" />
         <meta property="og:description" content="SattaMatka" />
-        <meta property="og:url" content="https://Goan Matka.net/" />
+        <meta property="og:url" content="https://bigbosss.in/" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css" type="text/css" />
     </head>
 
     <body>
         <div class="logo">
-            <!--<img src="" alt="Image of Goan Matka.NET" width="220" height="88">-->
-            <h1>Goan Matka</h1>
+            <!--<img src="" alt="Image of BigBosss.NET" width="220" height="88">-->
+            <h1>BigBosss</h1>
         </div>
         <div style="display: flex; padding: 5px; align-items: center; border: 2px solid #eb008b; border-radius: 10px 0 10px 10px; justify-content: space-between; margin-bottom: 2px;">
             <img
                 src="data:image/jpeg;base64,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"
-                alt="Goan Matka net LAXMI_PICTURE"
+                alt="BigBosss net LAXMI_PICTURE"
                 width="90"
                 height="68"
             />
-            <p style="color: red; display: inline-block; font-size: 16px;">!! Welcome Friends in the world of Goan Matka matka group. May you always win. !!</p>
+            <p style="color: red; display: inline-block; font-size: 16px;">!! Welcome Friends in the world of BigBosss matka group. May you always win. !!</p>
         </div>
         <!-- satta matka text -->
         <div style="border: 2px solid #eb008b; border-radius: 10px 0 10px 10px; margin-bottom: 2px;">
             <!-- dp-topbox -->
-            <h1 style="font-size: 16px; color: #1a237e; padding-bottom: 3px;">Satta Matka Goan Matka Kalyan Matka Result</h1>
+            <h1 style="font-size: 16px; color: #1a237e; padding-bottom: 3px;">Satta Matka BigBosss Kalyan Matka Result</h1>
             <h5 style="color: #444; font-size: 14px;">
-                India's No.1 Matka Site Goan Matka Heartly Welcome. Here You Will Get Perfect Guessing By Top Guesser And Fast Matka Result. Aaj Ka Satta Kalyan Fix Single Jodi Free Update Here You Find Top Matka Market Of India Kalyan Main
-                Milan Rajdhani* *kalyan Matka Tips *fast Matka Result *kalyan Main Rajdhani Matka Chart *Matka Guessing By Goan Matka By App Best Matka Site By Goan Matka
+                India's No.1 Matka Site BigBosss Heartly Welcome. Here You Will Get Perfect Guessing By Top Guesser And Fast Matka Result. Aaj Ka Satta Kalyan Fix Single Jodi Free Update Here You Find Top Matka Market Of India Kalyan Main
+                Milan Rajdhani* *kalyan Matka Tips *fast Matka Result *kalyan Main Rajdhani Matka Chart *Matka Guessing By BigBosss By App Best Matka Site By BigBosss
             </h5>
         </div>
         <div class="cm-patti">
@@ -142,7 +141,7 @@
             <!-- class="slash-text" -->
             <div style="border: 2px solid #eb008b; border-radius: 10px 0 10px 10px; margin-bottom: 2px; border-color: #aa00c0; color: #000; line-height: 1.4; font-size: 14px; padding: 4px 10px; text-shadow: 1px 1px #f4e1e1;">
                 KALYAN MATKA | MATKA RESULT | KALYAN MATKA TIPS | SATTA MATKA | MATKA.COM | MATKA PANA JODI TODAY | BATTA SATKA | MATKA PATTI JODI NUMBER | MATKA RESULTS | MATKA CHART | MATKA JODI | SATTA COM | FULL RATE GAME | MATKA GAME |
-                MATKA WAPKA | ALL MATKA RESULT LIVE ONLINE | MATKA RESULT | KALYAN MATKA RESULT | Goan Matka MATKA 143 | MAIN MATKA
+                MATKA WAPKA | ALL MATKA RESULT LIVE ONLINE | MATKA RESULT | KALYAN MATKA RESULT | BigBosss MATKA 143 | MAIN MATKA
             </div>
         </div>
         <!-- world me saabse fast -->
@@ -175,8 +174,8 @@
                                 ?>
                                 </h5>
 								<h6><?php echo date('h:i a', strtotime($r['open_time'])); ?> &nbsp;&nbsp; <?php echo date('h:i a', strtotime($r['close_time'])); ?></h6>
-								<div class="result_timing"><a href="<?php echo base_url('/jodi/'.strtolower($r['name']));?>" class="btn_chart">Jodi</a></div>
-								<div class="result_timing_right"><a href="<?php echo base_url('/panel/'.strtolower($r['name']));?>" class="btn_chart">Panel</a></div>
+								<div class="result_timing"><a href="<?php echo base_url('/matka/'.strtolower($r['name']));?>" class="btn_chart">Jodi</a></div>
+								<div class="result_timing_right"><a href="<?php echo base_url('/matka/'.strtolower($r['name']));?>" class="btn_chart">Panel</a></div>
 							</div>
 						<?php
 					}
@@ -287,28 +286,14 @@
             <!--list-->
             <!-- jodi/panel list -->
             <div class="purpel-header ab1">
-                <h4>SATTA MATKA JODI CHART</h4>
+                <h4>SATTA MATKA JODI & PANEL CHART</h4>
                 <?php
 				if($result)
 				{
 					foreach ($result as $r) {
                         $r["name"] = str_replace(" ","_",$r['name']);
                         ?>
-                        <a href="<?php echo base_url('/jodi/'.strtolower($r['name']));?>"><?php echo $r['name']; ?> Chart</a>
-                        <?php
-                    }
-                }
-                ?>
-            </div>
-            <div class="purpel-header ab1">
-                <h4>MATKA PANEL CHART</h4>
-                <?php
-				if($result)
-				{
-					foreach ($result as $r) {
-                        $r["name"] = str_replace(" ","_",$r['name']);
-                        ?>
-                        <a href="<?php echo base_url('/panel/'.strtolower($r['name']));?>"><?php echo $r['name']; ?> Panel Chart</a>
+                        <a href="<?php echo base_url('/matka/'.strtolower($r['name']));?>"><?php echo $r['name']; ?> Panel Chart</a>
                         <?php
                     }
                 }
@@ -356,7 +341,7 @@
                         <!-- <span class="my-arrow">↢</span> -->
                     </label>
                     <div class="card-body">
-                        <p>Ans: Matka Can be won by getting perfect guess of matka professors and Goan Matka. You can play safely by playing 3 or 4 digit daily and get these digits from our website that we publish on our free game page.</p>
+                        <p>Ans: Matka Can be won by getting perfect guess of matka professors and BigBosss. You can play safely by playing 3 or 4 digit daily and get these digits from our website that we publish on our free game page.</p>
                     </div>
                 </div>
                 <div class="faq-card">
@@ -393,37 +378,37 @@
             </div>
             <!-- LETS ROCK -->
             <div class="let-rock">
-                <div class="t-rock t-0">Let’s rock while playing Satta Matka with Goan Matka.</div>
+                <div class="t-rock t-0">Let’s rock while playing Satta Matka with BigBosss.</div>
                 <p>
-                    Do you know Satta Matka guessing legal or illegal in your country? At Goan Matka.net, we are enthusiastically discussing with Kalyan Matka how to get started with Online Matka and get results quickly. It is the smartest
+                    Do you know Satta Matka guessing legal or illegal in your country? At BigBosss.net, we are enthusiastically discussing with Kalyan Matka how to get started with Online Matka and get results quickly. It is the smartest
                     Matka gambling in India and other parts of the world. Satta Matka is the most logically used word in the Matka industry, and Hindi is written as सट्टा मटका.
                 </p>
-                <i>Always use the most authentic Online Matka website like Goan Matka.net to try your luck!</i>
+                <i>Always use the most authentic Online Matka website like BigBosss.net to try your luck!</i>
                 <p>
                     We are leading the online Matka industry with our top-notch results you can trust. We are one stop website for Matka Online, Matka Chart, Market, Panel Chart, Fix Matka Jodi, Boss Matka, Indian Matka, Kalyan Result,
                     Kalyan Matka, Matka Result, and more
                 </p>
                 <div class="t-rock">Online Matka</div>
                 <p>
-                    Our website is very effective for making money online instantly without genuine efforts, you can say just in a matter of few clicks, before starting earning money online through online Matka, Goan Matka, Satta, or सट्टा
+                    Our website is very effective for making money online instantly without genuine efforts, you can say just in a matter of few clicks, before starting earning money online through online Matka, BigBosss, Satta, or सट्टा
                     मटका prepare yourself and family. Making sure there are no interruptions is an essential part of success as you can win every battle if you are focusing only on one thing. If you cannot stay focused, you can never earn a
                     handsome amount from S Kalyan Matka. Try to cut off with children, spouses, and other people while you are going to play your heart favorite luck game Kalyan Matka or सट्टा मटका. Make sure you belong to you, and you can
                     boost your income within minutes. To make money online quickly, try one of the best Matka online sites. This site helps you make a lot of money with both points and cash. Pay the minimum amount first to start your first
                     Matka play. How much you want to pay according to this strategy online system will add points at the term show on the online Matka. If you win, play the game. There is nothing to worry about, as an online system will
                     automatically add points to your MatkaPlay account. Other games on the Matoka online site, including Single, Jody, Single Patty, Double Patty, Triple Patty, Half Sun Gum, Full Sun Gum Satta Matoka Online. The best part
                     of this fantastic game is that you can do everything from the comfort of your home. If you don't want to invest heavily in your online Business, consider Online Matka, Kalyan Matka, or
-                    <a href="https://Goan Matka.net/">सट्टा मटका</a>.
+                    <a href="https://bigbosss.in/">सट्टा मटका</a>.
                 </p>
-                <div class="t-rock">Goan Matka Kalyan Matka Result</div>
+                <div class="t-rock">BigBosss Kalyan Matka Result</div>
                 <p>
-                    If you want to play Kalyan Matka online and make a fortune, you're on the right site. Goan Matka.net is Matka's best and most popular web page. We aim to offer every customer a simple gaming experience. With Goan Matka,
-                    you won't lose a promoted player. Goan Matka has a very intuitive website that you can easily access. Either you are a beginner and don't want to learn how to play? OK, don't worry. Here at Goan Matka.net Matka Online,
+                    If you want to play Kalyan Matka online and make a fortune, you're on the right site. BigBosss.net is Matka's best and most popular web page. We aim to offer every customer a simple gaming experience. With BigBosss,
+                    you won't lose a promoted player. BigBosss has a very intuitive website that you can easily access. Either you are a beginner and don't want to learn how to play? OK, don't worry. Here at BigBosss.net Matka Online,
                     you will find the best information on investing and what to invest in. Through a carefully selected group of experts, we offer the best Matka experience and recommend it to everyone, from beginners to adults who have
                     already played Satta. Our experts ensure that you get the correct details about this. Not only that, there is the latest Satta Matka chart showing live results from all markets of this Business. We are on your side from
                     start to end.
                     <br />
                     <br />
-                    Online Matka Play is a very popular game among satta players. Goan Matka.net is best Online Game Website to play Matka, Goan Matka, Satta, Online Matka, Kalyan Matka, सट्टा मटका etc.
+                    Online Matka Play is a very popular game among satta players. BigBosss.net is best Online Game Website to play Matka, BigBosss, Satta, Online Matka, Kalyan Matka, सट्टा मटका etc.
                 </p>
                 <div class="t-rock">Why are people crazy about Online Matka?</div>
                 <p>
@@ -437,7 +422,7 @@
                     <br />
                     <br />
                     That's precisely why; the content on our website is carefully crafted, and everything you see on our website will help you explore this game. Not only can you host a forum where you can play what you like with the
-                    experts, but you can take advantage of Goan Matka.net, too, the best gaming forum with unique features with excellent and fast results. Our constant effort to publish results faster than any other website gives us an
+                    experts, but you can take advantage of BigBosss.net, too, the best gaming forum with unique features with excellent and fast results. Our constant effort to publish results faster than any other website gives us an
                     edge. We will help you make new changes to make quick decisions about the value of your bets and start making faster and better income. If you want to understand Satta Matka very quickly and want to know more, read our
                     tips and tricks.
                 </p>
@@ -452,7 +437,7 @@
                     called a kind of bet. When we speak in plain language, Satta is called playing any game with money.
                     <br />
                     <br />
-                    Betting in India is illegal. Goan Matka will provide the correct information in this article. There is no reason to encourage betting—the information is delivered through this content for informational purposes only.
+                    Betting in India is illegal. BigBosss will provide the correct information in this article. There is no reason to encourage betting—the information is delivered through this content for informational purposes only.
                     <br />
                     <br />
                     Satta Matka (सट्टा मटका) is a well-known casino game of all casino games and people all over the world love to play and bet on this game.
@@ -461,7 +446,7 @@
                 <p>
                     You've probably heard many times about King of Satta. Gambling is prevalent in India. The amount of this gambling increases dramatically during the unique festival. Satta King plays both offline and online. Satta King is
                     a type of lottery, gambling, or luck by a Chance game in India. Satta King is also known as Satta Matka. People who want to get rich quickly are playing this game. Satter King playing in India is becoming more and more
-                    popular every day. Goan Matka provides comprehensive information on all types and benefits associated with the game.
+                    popular every day. BigBosss provides comprehensive information on all types and benefits associated with the game.
                 </p>
                 <div class="t-rock">Satta Matka (सट्टा मटका) Game Strategy</div>
                 <p>
@@ -471,9 +456,9 @@
                 </p>
                 <div class="t-rock">Indian, Boss, Kalyan Matka</div>
                 <p>
-                    No wonder it's a betting game. However, unlike other games, it has clear rules and regulations to follow. Therefore, if you are looking for the perfect online Matka result, you need to be aware of these rules. Goan Matka
+                    No wonder it's a betting game. However, unlike other games, it has clear rules and regulations to follow. Therefore, if you are looking for the perfect online Matka result, you need to be aware of these rules. BigBosss
                     offers an excellent guide to help with the game and range of numbers. When choosing a Satta Matka game, always keep in mind that you need to find the right solution that is hard to crack, and you need to make sure you
-                    get the highest quality deals at an affordable price. For more information, visit our Goan Matka <a href="https://Goan Matka.net/">Matka</a>website.
+                    get the highest quality deals at an affordable price. For more information, visit our BigBosss <a href="https://bigbosss.in/">Matka</a>website.
                     <br />
                     <br />
                     You can win the game with the appropriate Matka number options. You can play this game <a href="https://matkabooking.com/">Online Matka Play</a> via your smartphone and desktop. The primary reason for the success of this
@@ -484,12 +469,12 @@
                     gamers who want to make a big difference, fun, and excitement on the same platform. This is an important reason to play this lottery game and make real money for many people worldwide. This game is also known as सट्टा
                     मटका.
                 </p>
-                <div class="t-rock">Goan Matka Matka Market Game Tips and Benefits</div>
+                <div class="t-rock">BigBosss Matka Market Game Tips and Benefits</div>
                 <p>
-                    Do you know how to learn more about real money by spending your time and energy playing and investing? For them, the <a href="https://Goan Matka.net/">Satta Matka</a> is not a new fiction. It started long ago, and people
+                    Do you know how to learn more about real money by spending your time and energy playing and investing? For them, the <a href="https://bigbosss.in/">Satta Matka</a> is not a new fiction. It started long ago, and people
                     today value it on electronic globes. Matka India is an exciting part of the game where you need to choose Jodi extensively to win the sport.
                 </p>
-                <div class="t-rock">Some benefits of Goan Matka Matka Market games</div>
+                <div class="t-rock">Some benefits of BigBosss Matka Market games</div>
                 <p>
                     Satta Matka is Satta's friendly game where individuals bet on this game. People will benefit from playing Satta Matka in a myriad of ways. This is a popular casino game.
                     <br />
@@ -507,14 +492,14 @@
                     <li>• Whatever your ability to play this game, luck is essential.</li>
                 </ul>
                 <p>
-                    On the internet, players can play Satta Matka. All you need to do to invest money is to choose a <a href="https://Goan Matka.net/">Goan Matka</a> platform, and you can trust it. However, choosing a reputable site is
+                    On the internet, players can play Satta Matka. All you need to do to invest money is to choose a <a href="https://bigbosss.in/">BigBosss</a> platform, and you can trust it. However, choosing a reputable site is
                     essential because people should not endanger their money.
                     <br />
                     <br />
-                    Below are a few of the most crucial benefits of playing Satta Matka at Goan Matka.
+                    Below are a few of the most crucial benefits of playing Satta Matka at BigBosss.
                 </p>
                 <div class="t-rock">Accurate and quick results</div>
-                <p>When playing Matka at Goan Matka, you can get immediate results. Reliable and immediate results make it worth playing the game.</p>
+                <p>When playing Matka at BigBosss, you can get immediate results. Reliable and immediate results make it worth playing the game.</p>
                 <div class="t-rock">Fun gambling experience</div>
                 <p>
                     People play casino games because these games bought a great source of entertainment. The Kalyan Matka market is like that. For people all over the world, Matka is an excellent source of entertainment. The excitement and
@@ -526,7 +511,7 @@
                     Matka Matka is an excellent source of cash income.
                 </p>
                 <div class="t-rock">Selectable games</div>
-                <p>Satta Matka contains many other varieties. People want a single game with multiple options. Goan Matka offers a wide range of options that allow people to choose the game they are interested in.</p>
+                <p>Satta Matka contains many other varieties. People want a single game with multiple options. BigBosss offers a wide range of options that allow people to choose the game they are interested in.</p>
             </div>
             <!-- LETS ROCK -->
             <!-- about us -->
@@ -546,7 +531,7 @@
                     Satta Matka participation an easygoing affair. People interested in Satta Matka is are now using these websites to play game and win money.
                 </p>
                 <p><b>Types of Satta Matka games</b></p>
-                <p>Kalyan Matka and Kalyan Night Goan Matka Matka are currently two most popular Satta Matka games. The Kalyan Night Matka runs from Monday to Friday, while the Kalyan Matka is played on 6 days of a week.</p>
+                <p>Kalyan Matka and Kalyan Night BigBosss Matka are currently two most popular Satta Matka games. The Kalyan Night Matka runs from Monday to Friday, while the Kalyan Matka is played on 6 days of a week.</p>
                 <p>
                     We are the most popular online <b>Satta Matka</b> Website that provides the quick Satta Matka Result and Satta Number. Be in touch with our website for fastest Kalyan Matka or Satta Matka Tips. We are giving you an
                     opportunity to become a Satta King using Our Online Satta Matka Result.
@@ -567,7 +552,7 @@
             <div class="ftr-sm">
                 <h2>MATKA</h2>
                 <p>
-                    <a href="https://Goan Matka.net/">Madhur Matka</a> | Satta Bazar | Satta Kurla | Satta Com | Satta Batta | Org Mobi Net In | Satta Master | Matka Game | Kapil Indian Matka | Matka Parivar 24 | Prabhat Matka | Tara Matka
+                    <a href="https://bigbosss.in/">Madhur Matka</a> | Satta Bazar | Satta Kurla | Satta Com | Satta Batta | Org Mobi Net In | Satta Master | Matka Game | Kapil Indian Matka | Matka Parivar 24 | Prabhat Matka | Tara Matka
                     | Golden Matka | SattaMatka.Com | Madhur Matka satta result chart, satta khabar, matka india net, satakmatak, satta chart 2019, satta bazar result, satta live, satta bajar, satta matka mumbai chart, satta live result,
                     satta fast result, satta fast, satta today Number 2
                 </p>
@@ -583,7 +568,7 @@
                 </p>
             </div>
             <!-- powered by us -->
-            <h4 class="pby-us">POWERD BY Goan Matka.NET</h4>
+            <h4 class="pby-us">POWERD BY BigBosss.in</h4>
             <!-- refresh button -->
             <a onclick="window.location.reload()" class="refresh-btn btm-btn-f">REFRESH </a>
         </div>
