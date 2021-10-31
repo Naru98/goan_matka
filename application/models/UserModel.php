@@ -126,6 +126,20 @@ class UserModel extends CI_Model {
         }
     }
 
+    public function getMatka($type)
+    {
+        $this->db->select("*, week(date) as week, DAYOFWEEK(date) as day");
+		$this->db->from('data');
+		$this->db->where('type',$type);
+        $this->db->order_by('date', 'ASC');
+		$result = $this->db->get();
+        if ($result->num_rows() > 0) {
+            return $result->result_array();
+        }else{
+            return false;
+        }
+    }
+
     public function deleteByField($field, $value, $table)
     {
         $this->db->where($field,$value);
@@ -138,33 +152,6 @@ class UserModel extends CI_Model {
         }
     }
 
-    public function getAthleteCoach($id)
-    {
-        $this->db->select('coach.*')
-         ->from('coach_athlete')
-         ->where('coach_athlete.athlete_id',$id)
-         ->join('coach', 'coach_athlete.coach_id = coach.id');
-        $result = $this->db->get();
-        if ($result->num_rows() > 0) {
-            return $result->result_array();
-        }else{
-            return false;
-        }
-    }
-
-    public function getCoachAthlete($id)
-    {
-        $this->db->select('athlete.*')
-         ->from('coach_athlete')
-         ->where('coach_athlete.coach_id',$id)
-         ->join('athlete', 'coach_athlete.athlete_id = athlete.id');
-        $result = $this->db->get();
-        if ($result->num_rows() > 0) {
-            return $result->result_array();
-        }else{
-            return false;
-        }
-    }
 
     public function delete($id,$table)
     {

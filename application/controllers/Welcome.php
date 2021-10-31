@@ -14,4 +14,18 @@ class Welcome extends CI_Controller {
 		$data['result'] = $this->UserModel->getData();
 		$this->load->view('main', $data);
 	}
+
+	public function chart($name)
+	{
+		$game= strtoupper(str_replace("_"," ",$name));
+		$data['matka'] = $this->UserModel->getByField('name',$game,'games');
+		if($data['matka'])
+		{
+			$data['data'] = $this->UserModel->getMatka($data['matka'][0]['id']);
+			$this->load->view('chart', $data);
+		}else
+		{
+			redirect(base_url('/'));
+		}
+	}
 }

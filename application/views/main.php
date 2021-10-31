@@ -300,9 +300,9 @@
 				if($result)
 				{
 					foreach ($result as $r) {
-                        $r["name"] = str_replace(" ","_",$r['name']);
+                        $r["href"] = str_replace(" ","_",$r['name']);
                         ?>
-                        <a href="<?php echo base_url('/matka/'.strtolower($r['name']));?>"><?php echo $r['name']; ?> Panel Chart</a>
+                        <a href="<?php echo base_url('/matka/'.strtolower($r['href']));?>"><?php echo $r['name']; ?> Chart</a>
                         <?php
                     }
                 }

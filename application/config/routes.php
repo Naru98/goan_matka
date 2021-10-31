@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 //admin
+$route['matka/(:any)'] = 'welcome/chart/$1';
 $route['admin'] = 'admin/main/index';
 $route['admin/login'] = 'admin/login/index';
 $route['admin/logout'] = 'admin/login/logout';
