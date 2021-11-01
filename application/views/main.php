@@ -92,6 +92,7 @@
                 $date = date('Y-m-d');
                 $time = date('H:i');
 				foreach ($result as $r) {
+                    print_r($r);
                     if(strtotime($r['date']) < strtotime($date) && $r['holiday'] == 0)
                     {
                         $min = (strtotime($r['open_time']) - strtotime($time)) / 60;
@@ -131,6 +132,7 @@
         <div class="matka-result">
             <h4>☔LIVE RESULT☔</h4>
             <div class="matka-card">
+                <?php echo date('w'); ?>
                 <?php echo date('Y-m-d'); ?>
                 <?php echo date('H:i'); ?>
                 Sabse Tezz Live Result Yahi Milega
