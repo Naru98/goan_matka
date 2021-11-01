@@ -92,8 +92,7 @@
                 $date = date('Y-m-d');
                 $time = date('H:i');
 				foreach ($result as $r) {
-                    print_r($r);
-                    if($r['day']== 7 || ($r['day'] >= date('w') && $r['day']!= 7 && date('w') != 0) )
+                    if($r['day']== 7 || ($r['day'] >= date('w') && $r['day']!= 7 && date('w') != 0)  && false)
                     {
                         if(strtotime($r['date']) < strtotime($date) && $r['holiday'] == 0)
                         {
@@ -135,9 +134,6 @@
         <div class="matka-result">
             <h4>☔LIVE RESULT☔</h4>
             <div class="matka-card">
-                <?php echo date('w'); ?>
-                <?php echo date('Y-m-d'); ?>
-                <?php echo date('H:i'); ?>
                 Sabse Tezz Live Result Yahi Milega
                 <!-- <div> -->
                 <?php
