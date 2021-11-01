@@ -131,6 +131,8 @@
         <div class="matka-result">
             <h4>☔LIVE RESULT☔</h4>
             <div class="matka-card">
+                <?php echo date('Y-m-d'); ?>
+                <?php echo date('H:i'); ?>
                 Sabse Tezz Live Result Yahi Milega
                 <!-- <div> -->
                 <?php
@@ -160,8 +162,13 @@
 				if($result)
 				{
 					foreach ($result as $r) {
+                        $class= '';
+                        if($r['id']==5 || $r['id']==8)
+                        {
+                            $class= 'style="background:yellow;"'
+                        }
 						?>
-							<div>
+							<div <?php echo $class; ?>>
 								<h4><?php echo $r['name']; ?></h4>
 								<h5>
                                 <?php 
