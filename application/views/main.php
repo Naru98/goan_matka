@@ -94,36 +94,38 @@
 				foreach ($result as $r) {
                     print_r($r);
                     if($r['day']== 7 || ($r['day'] >= date('w') && $r['day']!= 7 && date('w') != 0) )
-                    if(strtotime($r['date']) < strtotime($date) && $r['holiday'] == 0)
                     {
-                        $min = (strtotime($r['open_time']) - strtotime($time)) / 60;
-                        if($min <= 10)
+                        if(strtotime($r['date']) < strtotime($date) && $r['holiday'] == 0)
                         {
-                            array_push($live,[
-                                'name'=> $r['name'],
-                                'data'=> 'Loading....'
-                            ]);
-                        }
-                    }else if(strtotime($r['date']) == strtotime($date) && $r['holiday'] == 0)
-                    {
-                        $min = (strtotime($r['open_time']) - strtotime($time)) / 60;
-                        if($min >= -10)
+                            $min = (strtotime($r['open_time']) - strtotime($time)) / 60;
+                            if($min <= 10)
+                            {
+                                array_push($live,[
+                                    'name'=> $r['name'],
+                                    'data'=> 'Loading....'
+                                ]);
+                            }
+                        }else if(strtotime($r['date']) == strtotime($date) && $r['holiday'] == 0)
                         {
-                            array_push($live,[
-                                'name'=> $r['name'],
-                                'data'=> $r['open_patti'].'-'.$r['open_ank']
-                            ]);
-                        }
+                            $min = (strtotime($r['open_time']) - strtotime($time)) / 60;
+                            if($min >= -10)
+                            {
+                                array_push($live,[
+                                    'name'=> $r['name'],
+                                    'data'=> $r['open_patti'].'-'.$r['open_ank']
+                                ]);
+                            }
 
-                        $min = (strtotime($r['close_time']) - strtotime($time)) / 60;
-                        if($min <= 10 || $min >= -10)
-                        {
-                            array_push($live,[
-                                'name'=> $r['name'],
-                                'data'=> $r['open_patti'].'-'.$r['open_ank'].''.$r['close_ank'].'-'.$r['close_patti']
-                            ]);
-                        }
+                            $min = (strtotime($r['close_time']) - strtotime($time)) / 60;
+                            if($min <= 10 || $min >= -10)
+                            {
+                                array_push($live,[
+                                    'name'=> $r['name'],
+                                    'data'=> $r['open_patti'].'-'.$r['open_ank'].''.$r['close_ank'].'-'.$r['close_patti']
+                                ]);
+                            }
 
+                        }
                     }
                 }
             }
