@@ -162,6 +162,7 @@
 				if($result)
 				{
 					foreach ($result as $r) {
+                        print_r($r);
                         $class= '';
                         if($r['id']==5 || $r['id']==8)
                         {
