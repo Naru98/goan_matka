@@ -120,6 +120,9 @@ class Main extends CI_Controller {
 			$_POST['open_ank']= NULL;
 			$_POST['close_patti']= NULL;
 			$_POST['close_ank']= NULL;
+		}else
+		{
+			$_POST['holiday'] = 0;
 		}
         if($this->UserModel->updateByID($_POST,$id,'data'))
         {
