@@ -165,7 +165,7 @@
                         $class= '';
                         if($r['id']==5 || $r['id']==8)
                         {
-                            $class= 'style="background:yellow;"'
+                            $class= 'style="background:yellow;"';
                         }
 						?>
 							<div <?php echo $class; ?>>
