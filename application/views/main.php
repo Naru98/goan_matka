@@ -93,6 +93,7 @@
                 $time = date('H:i');
 				foreach ($result as $r) {
                     print_r($r);
+                    if($r['day']== 7 || ($r['day'] >= date('w') && $r['day']!= 7 && date('w') != 0) )
                     if(strtotime($r['date']) < strtotime($date) && $r['holiday'] == 0)
                     {
                         $min = (strtotime($r['open_time']) - strtotime($time)) / 60;
