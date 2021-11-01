@@ -178,7 +178,7 @@
                                         if($r['open_ank'])
                                         {
                                             echo $r['open_patti'].'-'.$r['open_ank'];
-                                            if($r['close_ank'])
+                                            if($r['close_patti'])
                                             {
                                                 echo $r['close_ank'].'-'.$r['close_patti'];
                                             }
