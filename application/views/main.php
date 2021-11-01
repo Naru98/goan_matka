@@ -175,7 +175,7 @@
                                 <?php 
                                     if($r['holiday'] == 0)
                                     {
-                                        if($r['open_ank'])
+                                        if($r['open_patti'])
                                         {
                                             echo $r['open_patti'].'-'.$r['open_ank'];
                                             if($r['close_patti'])
