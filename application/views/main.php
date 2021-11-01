@@ -191,8 +191,8 @@
                                 ?>
                                 </h5>
 								<h6><?php echo date('h:i a', strtotime($r['open_time'])); ?> &nbsp;&nbsp; <?php echo date('h:i a', strtotime($r['close_time'])); ?></h6>
-								<div class="result_timing"><a href="<?php echo base_url('/matka/'.strtolower($r['name']));?>" class="btn_chart">Jodi</a></div>
-								<div class="result_timing_right"><a href="<?php echo base_url('/matka/'.strtolower($r['name']));?>" class="btn_chart">Panel</a></div>
+								<!--<div class="result_timing"><a href="<?php // echo base_url('/matka/'.strtolower($r['name']));?>" class="btn_chart">Jodi</a></div>-->
+								<!--<div class="result_timing_right"><a href="<?php // echo base_url('/matka/'.strtolower($r['name']));?>" class="btn_chart">Panel</a></div>-->
 							</div>
 						<?php
 					}
@@ -310,7 +310,7 @@
 					foreach ($result as $r) {
                         $r["href"] = str_replace(" ","_",$r['name']);
                         ?>
-                        <a href="<?php echo base_url('/matka/'.strtolower($r['href']));?>"><?php echo $r['name']; ?> Chart</a>
+                        <!--<a href="<?php echo base_url('/matka/'.strtolower($r['href']));?>"><?php echo $r['name']; ?> Chart</a>-->
                         <?php
                     }
                 }
