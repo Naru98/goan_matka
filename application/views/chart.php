@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- saved from url=(0041)https: //dpboss.net/kalyan-penal-chart.php -->
+<!DOCTYPE html>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -984,31 +984,12 @@
       </style>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script async="" src="./Kalyan _ Kalyan Penal Chart _ Kalyan Panel Chart _ Kalyan Live Record_files/v0.js.download"></script><script async="" custom-element="amp-form" src="./Kalyan _ Kalyan Penal Chart _ Kalyan Panel Chart _ Kalyan Live Record_files/amp-form-0.1.js.download"></script>
-      <title>Kalyan | Kalyan Penal Chart | Kalyan Panel Chart | Kalyan Live Record</title>
-      <meta name="description" content="Kalyan, Kalyan Penal Chart Kalyan Panel Chart Kalyan Penal Record Book Fresh Live Kalyan Matka Old Chart Online Kalyan Chart Kalyan Live Chart Fresh History Kalyan Matka patti panna final ank Dpboss Net 143 Matka Chart">
-      <meta name="keywords" content="kalyan, kalyan matka, kalyan penal chart, kalyan panel chart, kalyan patti chart, kalyan panna chart, kalyan matka record, kalyan live chart, kalyan old chart, kalyan live chart,">
+      <title><?php echo $matka[0]['name']?>  | <?php echo $matka[0]['name']?>  Penal Chart | <?php echo $matka[0]['name']?>  Panel Chart | <?php echo $matka[0]['name']?>  Live Record</title>
+      <meta name="description" content="<?php echo $matka[0]['name']?> , <?php echo $matka[0]['name']?>  Penal Chart <?php echo $matka[0]['name']?>  Panel Chart <?php echo $matka[0]['name']?>  Penal Record Book Fresh Live <?php echo $matka[0]['name']?>  Matka Old Chart Online <?php echo $matka[0]['name']?>  Chart <?php echo $matka[0]['name']?>  Live Chart Fresh History <?php echo $matka[0]['name']?>  Matka patti panna final ank Bigboss IN 143 Matka Chart">
+      <meta name="keywords" content="<?php echo $matka[0]['name']?> , <?php echo $matka[0]['name']?>  matka, <?php echo $matka[0]['name']?>  penal chart, <?php echo $matka[0]['name']?>  panel chart, <?php echo $matka[0]['name']?>  patti chart, <?php echo $matka[0]['name']?>  panna chart, <?php echo $matka[0]['name']?>  matka record, <?php echo $matka[0]['name']?>  live chart, <?php echo $matka[0]['name']?>  old chart, <?php echo $matka[0]['name']?>  live chart,">
       <meta name="robots" content="follow, all">
-      <link rel="canonical" href="https://dpboss.net/kalyan-penal-chart.php">
-      <script type="application/ld+json"> {
-         "@context": "http://schema.org",
-         "@type": "NewsArticle",
-         "mainEntityOfPage":"https://dpboss.net",
-         "author": "Dpboss.net",
-         "headline": "Open-source framework for publishing content",
-         "datePublished": "2015-10-07T12:02:41Z",
-         "dateModified":"2021-10-31T12:02:041Z",
-         "image": [ "logo.jpg"],
-         "publisher": {
-         	"@type": "Organization",
-         	"name": "DPBOSS",
-         	"logo": {
-         		"@type": "ImageObject", "url": "https://dpboss.net/logo.png"
-         	}
-         }
-         }
-         
-      </script>
+      <link rel="canonical" href="https://bigboss.in/matka/<?php echo strtolower(str_replace(" ","_",$matka[0]['name']));?> ">
+     
       <style amp-boilerplate="">body {
          -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
          -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -1065,7 +1046,6 @@
             }
          </style>
       </noscript>
-      <link rel="apple-touch-icon" sizes="57x57" href="https://dpboss.net/newfev/apple-icon-57x57.png">
       <style amp-custom="">html {
          scroll-behavior: smooth
          }
@@ -1352,7 +1332,7 @@
          <div>
             <div class="panel panel-info">
                <div class="panel-heading text-center" style="background: #3f51b5;">
-                  <h1 style="font-size: 22px;color:#fff; text-shadow: 0px 0px;">Kalyan Panel Chart</h1>
+                  <h1 style="font-size: 22px;color:#fff; text-shadow: 0px 0px;"><?php echo $matka[0]['name']?> CHART</h1>
                </div>
                <div class="panel-body">
                   <table style="width: 100%; text-align:center;" class="panel-chart chart-table" cellpadding="2">
@@ -1393,26 +1373,29 @@
                      </thead>
                      <tbody>
                         <?php 
-                        $start=0;
+                        $start='start';
                         $sdate= '';
                         $html='';
+                        $day = 0;
                         foreach($data as $d)
                         {
-                           if($start !=0 && $start !=$d['week'])
+                           if($start !='start' && $start !=$d['week'] && $day == $matka[0]['day'])
                            {
                               echo '<td>'.date('d-m-Y', strtotime($sdate)).'<br>To <br>'.date('d-m-Y', strtotime($sdate. ' + '.(($matka[0]['day'] - 1).' days'))).'</td>';
                               echo $html;
                               echo '</tr>';
-                              $start= 0;
+                              $start= 'start';
                               $html = '';
+                              $day= 0;
                            }
-                           if($start == 0)
+                           if($start == 'start')
                            {
+                              $day= 0;
                               echo '<tr>';
                               $sdate = $d['date'];
                               $start = $d['week'];
                            }
-                           if($start == $d['week'])
+                           if(true)
                            {
                               $ank = '';
                               $open = '';
@@ -1457,7 +1440,7 @@
                               }
                               $html = $html.'<td>'.$open.'</td><td>'.$ank.'</td><td>'.$close.'</td>';
                            }
-
+                           $day++;
                         }
                         if($data)
                         {

@@ -49,6 +49,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col" class="sort" data-sort="date">Date</th>
+                    <th scope="col" class="sort" data-sort="date">Type</th>
                     <th scope="col" class="sort" data-sort="open_patti">Open Patti</th>
                     <th scope="col" class="sort" data-sort="open_ank">Open Ank</th>
                     <th scope="col" class="sort" data-sort="close_ank">Close Ank</th>

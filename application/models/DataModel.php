@@ -6,9 +6,9 @@ class DataModel extends CI_Model {
         $this->table = 'data';
         
         // Set orderable column fields
-        $this->column_order = array(null, 'date', 'open_patti','open_ank','close_ank','close_patti');
+        $this->column_order = array(null, 'date', 'type', 'open_patti','open_ank','close_ank','close_patti');
         // Set searchable column fields
-        $this->column_search = array( 'date', 'open_patti','open_ank','close_ank','close_patti');
+        $this->column_search = array( 'date', 'type', 'open_patti','open_ank','close_ank','close_patti');
         // Set default order
         $this->order = array('date' => 'desc');
 	}

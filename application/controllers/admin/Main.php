@@ -23,7 +23,8 @@ class Main extends CI_Controller {
 	public function data()
 	{
 		$data = $row = array();
-        
+        $matka=['none','KALYAN MORNING','TIME BAZAR','MILAN DAY','MAIN BAZAR DAY','KALYAN','RAJDHANI DAY','RAJDHANI NIGHT'
+        ,'MAIN BAZAR','KALYAN NIGHT','GOA DAY','GOA NIGHT','JACKPOT DAY','JACKPOT NIGHT'];
         // Fetch member's records
         $mdata = $this->DataModel->getData($_POST);
         $i = $_POST['start'];
@@ -32,6 +33,7 @@ class Main extends CI_Controller {
             $data[] = array(
                 $i,
                 date('d-M-Y',strtotime($m->date)),
+                $matka[$m->type].'( '.$m->type.' )',
 				$m->open_patti,
 				$m->open_ank,
 				$m->close_ank,
