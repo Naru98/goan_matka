@@ -1324,7 +1324,7 @@
    </head>
    <body class="amp-mode-mouse" style="opacity: 1; visibility: visible; animation: 0s ease 0s 1 normal none running none;">
       <div class="logo">
-          <h1>Big Bosss</h1>
+          <a href="<?php echo base_url(); ?>"><h1>Big Bosss</h1></a>
       </div>
       <div id="top"></div>
       <a href="#bottom" class="button2">Go to Bottom </a>
